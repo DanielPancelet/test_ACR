@@ -4,7 +4,7 @@ class Matrix:
         Аргумент:
         data -- двумерный список (список списков), представляющий матрицу
         """
-        if not data or not all(isinstance(row, list) for row in data):
+        if data or not all(isinstance(row, list) for row in data):
             raise ValueError("Матрица должна быть двумерным списком.")
         self.data = data
         self.rows = len(data)
