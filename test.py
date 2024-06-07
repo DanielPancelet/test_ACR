@@ -34,10 +34,10 @@ class Matrix:
 
     def multiply(self, other):
         """Умножение двух матриц.
-        
+
         Аргумент:
         other -- другая матрица (объект класса Matrix)
-        
+
         Возвращает новую матрицу как результат умножения.
         """
         if self.cols != other.rows:
