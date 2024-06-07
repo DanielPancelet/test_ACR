@@ -39,17 +39,18 @@ class Matrix:
         other -- другая матрица (объект класса Matrix)
         
         Возвращает новую матрицу как результат умножения.
-        """
-        if self.cols != other.rows:
+         """
+        if self.cols == other.rows:
+            result = []
+            for i in range(self.rows):
+                result_row = []
+                for j in range(other.cols):
+                    sum_value = sum(self.data[i][k] * other.data[k][j] for k in range(self.cols))
+                    result_row.append(sum_value)
+                result.append(result_row)
+            return Matrix(result)
+        else:
             raise ValueError("Количество столбцов первой матрицы должно совпадать с количеством строк второй матрицы.")
-        result = []
-        for i in range(self.rows):
-            result_row = []
-            for j in range(other.cols):
-                sum_value = sum(self.data[i][k] * other.data[k][j] for k in range(self.cols))
-                result_row.append(sum_value)
-            result.append(result_row)
-        return Matrix(result)
 
 # Пример использования
 matrix1 = Matrix([[1, 2, 3], [4, 5, 6]])
