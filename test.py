@@ -40,8 +40,8 @@ class Matrix:
         
         Возвращает новую матрицу как результат умножения.
         """
-        if self.cols != other.rows:
-            raise ValueError("Количество столбцов первой матрицы должно совпадать с количеством строк второй матрицы.")
+        if self.rows != other.cols:
+            raise ValueError("Количество строк первой матрицы должно совпадать с количеством столбцов второй матрицы.")
         result = []
         for i in range(self.rows):
             result_row = []
