@@ -10,6 +10,7 @@ class Matrix:
         self.data = data
         self.rows = len(data)
         self.cols = len(data[0])
+        
         for row in data:
             if len(row) != self.cols:
                 raise ValueError("Все строки матрицы должны иметь одинаковую длину.")
